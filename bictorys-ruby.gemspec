@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name = "bictorys-ruby"
   spec.version = Bictorys::VERSION
   spec.authors = ["Alioune Badara Samb"]
-  spec.email = ["alioune@keedohq.com", "badou017@gmail.com"]
+  spec.email = ["badou017@gmail.com"]
 
   spec.summary = "Ruby SDK for Bictorys payments API."
   spec.description = "Lightweight Ruby client for Bictorys: create checkouts/charges with clean config, timeouts, retries, and error mapping."

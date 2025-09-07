@@ -43,7 +43,7 @@ module Bictorys
 
     def execute(verb, path, body, params)
       response = @conn.public_send(verb) do |req|
-        req.url(path, params) if params
+        req.url(path, params || {})
         req.options.timeout      = @timeout
         req.options.open_timeout = @open_timeout
         req.headers["Accept"]       = "application/json"
