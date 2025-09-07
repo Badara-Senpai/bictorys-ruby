@@ -9,7 +9,7 @@ Currently supports **checkout/charge creation**.
 
 Add this line to your application's Gemfile:
 
-    gem "bictorys-ruby", git: "https://github.com/your-org/bictorys-ruby.git"
+    gem "bictorys-ruby", git: "https://github.com/Badara-Senpai/bictorys-ruby.git"
 
 And then execute:
 
