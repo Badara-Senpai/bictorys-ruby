@@ -4,7 +4,7 @@ require_relative "lib/bictorys/ruby/version"
 
 Gem::Specification.new do |spec|
   spec.name = "bictorys-ruby"
-  spec.version = Bictorys::Ruby::VERSION
+  spec.version = Bictorys::VERSION
   spec.authors = ["Alioune Badara Samb"]
   spec.email = ["alioune@keedohq.com", "badou017@gmail.com"]
 
