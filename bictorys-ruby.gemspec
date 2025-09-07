@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/bictorys/ruby/version"
+require_relative "lib/bictorys/version"
 
 Gem::Specification.new do |spec|
   spec.name = "bictorys-ruby"
