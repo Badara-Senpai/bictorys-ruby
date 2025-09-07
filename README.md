@@ -35,6 +35,15 @@ For most projects you can configure the SDK directly:
 
 ---
 
+### Supported Environments
+
+The `environment` setting controls which API base URL is used:
+
+- `:sandbox` (default) → `https://api.test.bictorys.com`
+- `:live` (or `:production`) → `https://api.bictorys.com`
+
+You can also override the base URL manually with `config.base_url` if needed.
+
 ### Rails Setup
 
 In a Rails app, the convention is to create an initializer:
