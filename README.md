@@ -17,10 +17,15 @@ And then execute:
 
 ---
 
+## Requirements
+Make sure to have your Public API Key from Bictorys. You can find it here [Bictorys -> Developer](https://dashboard.bictorys.com/developer).
+
 ## Configuration
 
+For most projects you can configure the SDK directly:
+
     Bictorys.configure do |config|
-      config.api_key       = ENV.fetch("BICTORYS_API_KEY")
+      config.api_key       = ENV.fetch("BICTORYS_PUBLIC_KEY")
       config.environment   = :sandbox # or :live
       config.base_url      = "..."    # optional override
       config.timeout       = 15       # seconds (default)
@@ -29,6 +34,30 @@ And then execute:
     end
 
 ---
+
+### Rails Setup
+
+In a Rails app, the convention is to create an initializer:
+
+**`config/initializers/bictorys.rb`**
+
+    Bictorys.configure do |config|
+      # Prefer Rails credentials (encrypted) for production
+      config.api_key = Rails.application.credentials.dig(:bictorys, :public_key) ||
+                       ENV.fetch("BICTORYS_PUBLIC_KEY")
+
+      config.environment = (Rails.application.credentials.dig(:bictorys, :environment) ||
+                            ENV["BICTORYS_ENVIRONMENT"] || "sandbox").to_sym
+
+      config.timeout       = 15
+      config.open_timeout  = 5
+      config.logger        = Rails.logger
+    end
+
+Now you can use the client anywhere in your app:
+
+    client = Bictorys::Client.new
+    result = client.charges.create(...)
 
 ## Usage
 
